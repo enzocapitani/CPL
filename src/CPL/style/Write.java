@@ -1,4 +1,4 @@
-package style;
+package CPL.style;
 
 public class Write implements WriteInterface {
 	
