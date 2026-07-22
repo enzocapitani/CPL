@@ -51,14 +51,15 @@ public class Write {
 	/*
 	* Mesma coisa das implementações anteriores, mas agora é possível escrever com cores definidas pelo enum WriteColor
 	* em alguns consoles de IDE , essa função pode não funcionar 
+	* Além disso, a função só escreve colorido a string defenida no escopo da função 
 	*/
 	public static void write(String phrase, WriteColor color){
 
-		System.out.print(color.toString());
+		setWriteColor(color);
 
 		writeLoop(phrase, delay);
 		
-		System.out.print(WriteColor.RESET);
+		resetWriteColor();
 
 	}
 
@@ -66,11 +67,26 @@ public class Write {
 	* Escrever com cor, mas com delay definido na entrada da função
 	*/
 	public static void write(String phrase, WriteColor color, int delay){
-		System.out.print(color.toString());
+		setWriteColor(color);
 
 		writeLoop(phrase, delay);
+		
+		resetWriteColor();
+	}
+	
+	/*
+	* Define a cor geral do programa, ele colore o System.out.println() também
+	* ao chamar esse método, todas as funções de saídas no terminal vão sair com essa cor 
+	*/
+	public static void setWriteColor(WriteColor color){
+		System.out.print(color.toString());
+	}
 
+	/*
+	* Reinicia para a cor original do terminal
+	*/
+	public static void resetWriteColor(){
 		System.out.print(WriteColor.RESET);
-	}	
+	}
 
 }
