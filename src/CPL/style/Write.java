@@ -49,6 +49,10 @@ public class Write {
 		
 	}
 
+	/*
+	* Mesma coisa das implementações anteriores, mas agora é possível escrever com cores definidas pelo enum WriteColor
+	* em alguns consoles de IDE , essa função pode não funcionar 
+	*/
 	public static void write(String phrase, WriteColor color){
 
 		for(int i = 0; i < phrase.length(); i++) {
@@ -71,6 +75,9 @@ public class Write {
 		System.out.println();
 	}
 
+	/*
+	* Escrever com cor, mas com delay definido na entrada da função
+	*/
 	public static void write(String phrase, WriteColor color, int delay){
 		for(int i = 0; i < phrase.length(); i++) {
 
