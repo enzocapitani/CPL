@@ -12,11 +12,12 @@ public class Write {
 	 * Basicamente é um System.out.println() mas com uma animação mais dinâmica, melhorando a
 	 * interface no console, trazendo mais dinâmica
 	 */
-	
-	public static void write(String phrase) {
-		
+	private static void writeLoop(String phrase, int delay){
 		for(int i = 0; i < phrase.length(); i++) {
-			System.out.print(phrase.charAt(i));
+
+			System.out.print(
+				phrase.charAt(i)
+			);
 			
 			try {
 				Thread.sleep(delay);
@@ -25,8 +26,17 @@ public class Write {
 			}
 			
 		}
-		
 		System.out.println();
+	}
+
+	
+	/*
+	* Aplica o writeLoop, deixa acessível ao usuário com delay pré definido pela classe
+	*/
+	public static void write(String phrase) {
+		
+		writeLoop(phrase, delay);
+		
 	}
 	
 	/*
@@ -34,18 +44,7 @@ public class Write {
 	 */
 	public static void write(String phrase, int delay) {
 		
-		for(int i = 0; i < phrase.length(); i++) {
-			System.out.print(phrase.charAt(i));
-			
-			try {
-				Thread.sleep(delay);
-			}catch(Exception e ) {
-				e.printStackTrace();
-			}
-			
-		}
-		
-		System.out.println();
+		writeLoop(phrase, delay);
 		
 	}
 
@@ -55,48 +54,23 @@ public class Write {
 	*/
 	public static void write(String phrase, WriteColor color){
 
-		for(int i = 0; i < phrase.length(); i++) {
+		System.out.print(color.toString());
 
-			System.out.print(
-				color.toString() +
-				phrase.charAt(i) +
-				WriteColor.RESET
-
-			);
-			
-			try {
-				Thread.sleep(delay);
-			}catch(Exception e ) {
-				e.printStackTrace();
-			}
-			
-		}
+		writeLoop(phrase, delay);
 		
-		System.out.println();
+		System.out.print(WriteColor.RESET);
+
 	}
 
 	/*
 	* Escrever com cor, mas com delay definido na entrada da função
 	*/
 	public static void write(String phrase, WriteColor color, int delay){
-		for(int i = 0; i < phrase.length(); i++) {
+		System.out.print(color.toString());
 
-			System.out.print(
-				color.toString() +
-				phrase.charAt(i) +
-				WriteColor.RESET
+		writeLoop(phrase, delay);
 
-			);
-			
-			try {
-				Thread.sleep(delay);
-			}catch(Exception e ) {
-				e.printStackTrace();
-			}
-			
-		}
-		
-		System.out.println();
-	}
+		System.out.print(WriteColor.RESET);
+	}	
 
 }
