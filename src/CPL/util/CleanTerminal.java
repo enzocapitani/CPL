@@ -2,7 +2,7 @@ package CPL.util;
 
 public class CleanTerminal {
 	
-	/*
+	/**
 	 * Esse método funciona apenas se o seu programa java está sendo rodado no terminal
 	 * em console de IDE costuma não funcionar
 	 */

@@ -5,12 +5,15 @@ public class Write {
 	//Delay pré definido
 	private static final int delay = 50;
 	
-	/*
+	/**
 	 * Essa função escreve caractere por caractere em um intervalo pré definido pela classe,
 	 * ao final, quebra a linha.
 	 * Ao escrever uma letra, o programa dorme por 50 milissegundos e depois repete o ciclo
 	 * Basicamente é um System.out.println() mas com uma animação mais dinâmica, melhorando a
 	 * interface no console, trazendo mais dinâmica
+	 * 
+	 * @param phrase frase ou palavra que deseja ser escrito
+	 * @param delay delay em milissegundos que irá aparecer caractere por caractere
 	 */
 	private static void writeLoop(String phrase, int delay){
 		for(int i = 0; i < phrase.length(); i++) {
@@ -30,8 +33,10 @@ public class Write {
 	}
 
 	
-	/*
+	/**
 	* Aplica o writeLoop, deixa acessível ao usuário com delay pré definido pela classe
+	*
+	* @param phrase frase ou palavra que deseja ser escrita
 	*/
 	public static void write(String phrase) {
 		
@@ -39,8 +44,11 @@ public class Write {
 		
 	}
 	
-	/*
+	/**
 	 * Mesma coisa da primeira, porém com um delay escolhido pelo usuário
+	 * 
+	 * @param phrase frase ou palavra que deseja ser escrita
+	 * @param delay delay em milissegundos que as letras irão aparecer
 	 */
 	public static void write(String phrase, int delay) {
 		
@@ -48,10 +56,13 @@ public class Write {
 		
 	}
 
-	/*
+	/**
 	* Mesma coisa das implementações anteriores, mas agora é possível escrever com cores definidas pelo enum WriteColor
 	* em alguns consoles de IDE , essa função pode não funcionar 
 	* Além disso, a função só escreve colorido a string defenida no escopo da função 
+	*
+	* @param phrase frase ou palavra que deseja ser escrita
+	* @param color cor que deseja escrever a frase ou palavra
 	*/
 	public static void write(String phrase, WriteColor color){
 
@@ -63,8 +74,12 @@ public class Write {
 
 	}
 
-	/*
+	/**
 	* Escrever com cor, mas com delay definido na entrada da função
+	*
+	* @param phrase frase ou palavra que deseja ser escrita
+	* @param color cor que deseja escrever a frase ou palavra
+	* @param delay delay em milissegundos que as letras irão aparecer
 	*/
 	public static void write(String phrase, WriteColor color, int delay){
 		setWriteColor(color);
@@ -74,15 +89,17 @@ public class Write {
 		resetWriteColor();
 	}
 	
-	/*
+	/**
 	* Define a cor geral do programa, ele colore o System.out.println() também
 	* ao chamar esse método, todas as funções de saídas no terminal vão sair com essa cor 
+	*
+	* @param color cor que deseja colocar ao terminal
 	*/
 	public static void setWriteColor(WriteColor color){
 		System.out.print(color.toString());
 	}
 
-	/*
+	/**
 	* Reinicia para a cor original do terminal
 	*/
 	public static void resetWriteColor(){

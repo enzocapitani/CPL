@@ -1,6 +1,6 @@
 package CPL.style;
 
-/*
+/**
 * Enum para as cores no WriteColor, os valores retornam valores em ANSI em que o terminal consegue ler
 */
 public enum WriteColor {
