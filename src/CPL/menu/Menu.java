@@ -21,7 +21,7 @@ public class Menu {
      * @param options Vetor contendo as opções que serão exibidas.
      */
     public static void simpleMenu(String title, String options[]){
-        String separator = Menu.generateSeparator(title, options);
+        String separator = Menu.generateSeparator(title, options, '=');
 
         // Gera o cabeçalho do menu
         System.out.println(separator);
@@ -48,8 +48,8 @@ public class Menu {
      * @param options Vetor contendo as opções do menu.
      * @param delay Tempo, em milissegundos, entre cada caractere exibido.
      */
-    public static void simpleTypeMenu(String title, String options[], int delay){
-        String separator = Menu.generateSeparator(title, options);
+    public static void simpleMenu(String title, String options[], int delay){
+        String separator = Menu.generateSeparator(title, options, '=');
 
         // Gera o cabeçalho do menu utilizando efeito de escrita
         Write.write(separator, delay);
@@ -67,6 +67,20 @@ public class Menu {
     }
 
     /**
+     * 
+     */
+    public static void boxMenu(String title, String options[]){
+        String separator = generateSeparator(title, options, '-');
+
+        System.out.println(separator);
+        System.out.println(generateSurroundedTitle(separator, title, biggestElement(title, options)));
+        System.out.println(separator);
+
+        writeOptions(options, separator.length());
+        System.out.println(separator);
+    }
+
+    /**
      * Gera automaticamente a linha separadora do menu.
      *
      * O tamanho da linha é baseado no maior texto encontrado entre
@@ -74,15 +88,11 @@ public class Menu {
      *
      * @param title Título do menu.
      * @param options Vetor contendo as opções.
+     * @param character o caractere do separador
      * @return Uma String composta apenas pelo caractere '='.
      */
-    public static String generateSeparator(String title, String options[]){
-        int maiorString = title.length();
-
-        // Procura o maior texto entre as opções
-        for(int i = 0; i < options.length; i++){
-            if(options[i].length() > maiorString) maiorString = options[i].length();
-        }
+    public static String generateSeparator(String title, String options[], char character){
+        int maiorString = biggestElement(title, options);
 
         // Multiplica o tamanho para gerar uma margem visual maior
         maiorString *= 2;
@@ -91,7 +101,7 @@ public class Menu {
 
         // Cria a linha separadora
         for(int i = 0; i < maiorString; i++){
-            sb.append('=');
+            sb.append(character);
         }
 
         return sb.toString();
@@ -124,6 +134,87 @@ public class Menu {
 
         return sb.toString();
 
+    }
+
+    private static String generateSurroundedTitle(String separator, String title, int maiorString){
+        StringBuilder sb = new StringBuilder();
+
+        int espacoBranco = separator.length()/2 - title.length()/2;
+
+        for(int i = 0; i < espacoBranco; i++){
+            if(i == 0){
+              sb.append("|");
+              continue;   
+            }
+            sb.append(" ");
+        }
+
+        // Adiciona o título
+        for(int i = 0; i < title.length(); i++){
+            sb.append(title.charAt(i));
+        }
+
+        if(maiorString % 2 != 0) espacoBranco -= 1;
+
+        for(int i = 0; i < espacoBranco; i++){
+            if(i == espacoBranco - 1){
+                sb.append("|");
+                continue;
+            }
+            sb.append(" ");
+        }
+
+        return sb.toString();
+
+    }
+
+    private static int biggestElement(String title, String[] options){
+        int maiorString = title.length();
+
+        // Procura o maior texto entre as opções
+        for(int i = 0; i < options.length; i++){
+            if(options[i].length() > maiorString) maiorString = options[i].length();
+        }
+
+        return maiorString;
+    }
+
+    private static void writeOptions(String[] options, int separatorSize){
+        StringBuilder sb = new StringBuilder();
+
+        for(int i = 0; i < options.length; i++){
+            for(int j = 0; j < separatorSize; j++){
+                
+                if(j < 3){
+                    switch (j) {
+                        case 0:
+                            sb.append('|');
+                            break;
+                        case 1: 
+                            sb.append(i+1);
+                            break;
+                        case 2: 
+                            sb.append('-');
+                            break;
+                    }
+                    continue;
+                }
+
+                if(j >= 3 && j < options[i].length() + 3){
+                    sb.append(options[i].charAt(j - 3));
+                    continue;
+                }
+
+                if(j < separatorSize - 1){
+                    sb.append(" ");
+                }else{
+                    sb.append('|');
+                }
+
+            }
+            System.out.println(sb.toString());
+            sb.delete(0, separatorSize);
+        }
     }
 
 }
