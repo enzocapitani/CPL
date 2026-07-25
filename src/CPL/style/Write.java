@@ -38,7 +38,7 @@ public class Write {
 	*
 	* @param phrase frase ou palavra que deseja ser escrita
 	*/
-	public static void write(String phrase) {
+	public static void type(String phrase) {
 		
 		writeLoop(phrase, delay);
 		
@@ -50,7 +50,7 @@ public class Write {
 	 * @param phrase frase ou palavra que deseja ser escrita
 	 * @param delay delay em milissegundos que as letras irão aparecer
 	 */
-	public static void write(String phrase, int delay) {
+	public static void type(String phrase, int delay) {
 		
 		writeLoop(phrase, delay);
 		
@@ -64,7 +64,7 @@ public class Write {
 	* @param phrase frase ou palavra que deseja ser escrita
 	* @param color cor que deseja escrever a frase ou palavra
 	*/
-	public static void write(String phrase, WriteColor color){
+	public static void type(String phrase, WriteColor color){
 
 		setWriteColor(color);
 
@@ -81,7 +81,7 @@ public class Write {
 	* @param color cor que deseja escrever a frase ou palavra
 	* @param delay delay em milissegundos que as letras irão aparecer
 	*/
-	public static void write(String phrase, WriteColor color, int delay){
+	public static void type(String phrase, WriteColor color, int delay){
 		setWriteColor(color);
 
 		writeLoop(phrase, delay);

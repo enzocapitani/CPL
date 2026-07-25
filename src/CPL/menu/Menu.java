@@ -20,7 +20,7 @@ public class Menu {
      * @param title Título do menu.
      * @param options Vetor contendo as opções que serão exibidas.
      */
-    public static void simpleMenu(String title, String options[]){
+    public static void simple(String title, String options[]){
         String separator = Menu.generateSeparator(title, options, '=');
 
         // Gera o cabeçalho do menu
@@ -48,21 +48,21 @@ public class Menu {
      * @param options Vetor contendo as opções do menu.
      * @param delay Tempo, em milissegundos, entre cada caractere exibido.
      */
-    public static void simpleMenu(String title, String options[], int delay){
+    public static void simple(String title, String options[], int delay){
         String separator = Menu.generateSeparator(title, options, '=');
 
         // Gera o cabeçalho do menu utilizando efeito de escrita
-        Write.write(separator, delay);
-        Write.write(Menu.generateCenterTitle(separator, title), delay);
-        Write.write(separator, delay);
+        Write.type(separator, delay);
+        Write.type(Menu.generateCenterTitle(separator, title), delay);
+        Write.type(separator, delay);
 
         // Exibe todas as opções numeradas com efeito de escrita
         for(int i = 0; i < options.length; i++){
-            Write.write((i + 1)+"- "+options[i], delay);
+            Write.type((i + 1)+"- "+options[i], delay);
         }
 
         // Fecha o menu
-        Write.write(separator, delay);
+        Write.type(separator, delay);
 
     }
 
@@ -72,7 +72,7 @@ public class Menu {
      * @param title
      * @param options
      */
-    public static void boxMenu(String title, String options[]){
+    public static void box(String title, String options[]){
         String separator = generateSeparator(title, options, '-');
 
         System.out.println(separator);
