@@ -11,14 +11,14 @@ A classe `Write` faz parte do pacote `CPL.style` e fornece métodos para escreve
 A classe possui métodos estáticos, portanto **não é necessário criar uma instância**.
 
 ```java
-Write.write("Olá, mundo!");
+Write.type("Olá, mundo!");
 ```
 
 ---
 
 # Métodos
 
-## `write(String phrase)`
+## `type(String phrase)`
 
 Escreve uma frase caractere por caractere utilizando o delay padrão da biblioteca (50 ms).
 
@@ -31,7 +31,7 @@ Escreve uma frase caractere por caractere utilizando o delay padrão da bibliote
 ### Exemplo
 
 ```java
-Write.write("Bem-vindo ao CPL!");
+Write.type("Bem-vindo ao CPL!");
 ```
 
 ---
@@ -50,12 +50,12 @@ Escreve uma frase caractere por caractere utilizando um delay personalizado.
 ### Exemplo
 
 ```java
-Write.write("Carregando...", 100);
+Write.type("Carregando...", 100);
 ```
 
 ---
 
-## `write(String phrase, WriteColor color)`
+## `type(String phrase, WriteColor color)`
 
 Escreve uma frase utilizando uma cor ANSI e o delay padrão da biblioteca.
 
@@ -71,7 +71,7 @@ Após terminar a escrita, a cor do terminal é restaurada automaticamente.
 ### Exemplo
 
 ```java
-Write.write("Operação concluída!", WriteColor.GREEN);
+Write.type("Operação concluída!", WriteColor.GREEN);
 ```
 
 ---
@@ -93,7 +93,7 @@ Após terminar a escrita, a cor do terminal é restaurada automaticamente.
 ### Exemplo
 
 ```java
-Write.write(
+Write.type(
     "Inicializando sistema...",
     WriteColor.BLUE,
     75
@@ -186,16 +186,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Write.write("Olá!");
+        Write.type("Olá!");
 
-        Write.write("Carregando...", 80);
+        Write.type("Carregando...", 80);
 
-        Write.write(
+        Write.type(
             "Sucesso!",
             WriteColor.GREEN
         );
 
-        Write.write(
+        Write.type(
             "Erro!",
             WriteColor.RED,
             100

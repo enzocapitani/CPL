@@ -33,7 +33,7 @@ Define a cor do texto como vermelho.
 ### Exemplo
 
 ```java
-Write.write("Erro!", WriteColor.RED);
+Write.type("Erro!", WriteColor.RED);
 ```
 
 ---
@@ -45,7 +45,7 @@ Define a cor do texto como verde.
 ### Exemplo
 
 ```java
-Write.write("Operação realizada com sucesso!", WriteColor.GREEN);
+Write.type("Operação realizada com sucesso!", WriteColor.GREEN);
 ```
 
 ---
@@ -57,7 +57,7 @@ Define a cor do texto como azul.
 ### Exemplo
 
 ```java
-Write.write("Informação", WriteColor.BLUE);
+Write.type("Informação", WriteColor.BLUE);
 ```
 
 ---

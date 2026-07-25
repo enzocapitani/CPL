@@ -1,3 +1,15 @@
+# Version 0.033
+## Refactors
+### Write class
+Refatoração das funções write(), agora passam a se chanar type().
+### Menu Class 
+Refatoração das funções da classe, foi removido de algumas o nome Menu do lado, facilitando a escrita
+
+# Version 0.031
+## Bug fix
+### Módulo
+Conserto do módulo do projeto, adicionada nela o pacote do menu, isso ajeita os projetos modulares
+
 # Version 0.03
 ## Features
 Adicionada a classe Menu

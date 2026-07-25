@@ -6,7 +6,7 @@ A classe `Menu` permite criar menus simples para aplicações executadas no term
 
 ## Métodos
 
-### `simpleMenu(String title, String[] options)`
+### `simple(String title, String[] options)`
 
 Exibe um menu simples no terminal.
 
@@ -32,7 +32,7 @@ public class Main {
             "Sair"
         };
 
-        Menu.simpleMenu("MENU PRINCIPAL", options);
+        Menu.simple("MENU PRINCIPAL", options);
 
     }
 }
@@ -52,7 +52,7 @@ public class Main {
 
 ---
 
-### `simpleTypeMenu(String title, String[] options, int delay)`
+### `simple(String title, String[] options, int delay)`
 
 Exibe um menu utilizando o efeito de digitação da classe `Write`.
 
@@ -79,7 +79,7 @@ public class Main {
             "Sair"
         };
 
-        Menu.simpleTypeMenu("RPG", options, 30);
+        Menu.simple("RPG", options, 30);
 
     }
 }
@@ -142,7 +142,7 @@ public class Main {
             "Sair"
         };
 
-        Menu.simpleMenu("SISTEMA", menu);
+        Menu.simple("SISTEMA", menu);
 
     }
 }
