@@ -48,7 +48,7 @@ Atenção! É essencial utilizar a versão do JDK 21 para melhor experiência.
 Após a importação, a biblioteca estará disponível para uso no projeto.
 
 ## Exemplo de código usando o CPL
-### Write e CleanConsole
+### Write e CleanTerminal
 ```java
 package principal;
 
