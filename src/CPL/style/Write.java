@@ -1,5 +1,7 @@
 package CPL.style;
 
+import CPL.util.Terminal;
+
 public class Write {
 	
 	//Delay pré definido
@@ -21,12 +23,8 @@ public class Write {
 			System.out.print(
 				phrase.charAt(i)
 			);
-			
-			try {
-				Thread.sleep(delay);
-			}catch(Exception e ) {
-				e.printStackTrace();
-			}
+
+			Terminal.sleep(delay);
 			
 		}
 		System.out.println();
