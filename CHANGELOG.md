@@ -1,16 +1,61 @@
-# Version 0.033
+# ✅⚙️ Version 0.04 
+# 🪄 Refactors
+
+## CleanTerminal class
+Refatoração no nome, agora se chama TERMINAL, para englobar novas
+funções que alteram afetam o terminal
+
+## Menu package
+Refatoração na classe menu, foi separada novas classes para cada uma ter
+sua propria responsabilidade no código. Entre elas: Header, Separator e Title
+
+### Title class 
+Serve exclusivamente para geração de titulos, nela possui:
+
+funções: 
+
+generateCenterTitle : Gera titulos centralizados
+generateSorroundedTitle : Gera titulos centralizados e cercados por caracteres
+
+### Header class
+Nela é possível criar cabeçalhos simples
+
+header() : gera o cabeçalho. Para mais informações veja a documentação da classe
+
+### Separator
+Classe exclusiva para gerar separadores
+
+## 🆕 Features 
+
+### Terminal Class (Antiga CleanTerminal)
+Nova função chamada de sleep, ela pausa a thread principal que para o processo que estava acontecendo
+fazendo um efeito de pausa do programa.
+
+Exemplo:
+
+```java
+   import CPL.util.Terminal;
+
+    public static void main(String[] args) {
+        System.out.println("Estou");
+        Terminal.sleep(1000);
+        System.out.println(" dormindo...");
+    }
+```
+
+# ✅⚙️ Version 0.033
 ## Refactors
 ### Write class
 Refatoração das funções write(), agora passam a se chanar type().
 ### Menu Class 
 Refatoração das funções da classe, foi removido de algumas o nome Menu do lado, facilitando a escrita
 
-# Version 0.031
+# ✅⚙️ Version 0.031
 ## Bug fix
 ### Módulo
 Conserto do módulo do projeto, adicionada nela o pacote do menu, isso ajeita os projetos modulares
 
-# Version 0.03
+# ✅⚙️ Version 0.03
 ## Features
 Adicionada a classe Menu
 ### Menu
@@ -47,7 +92,7 @@ saida:
 ==============
 ```
 
-# Version 0.02
+# ✅⚙️ Version 0.02
 ## Features
 Adicionada a classe Input e novas funções na Write
 ### Write
@@ -74,7 +119,7 @@ public void genericFunction(){
 
 ```
 
-# Version 0.01
+# ✅⚙️ Version 0.01
 ## Features
 Adicionada as primeiras funções do código, CleanTerminal e Write
 ### Write
