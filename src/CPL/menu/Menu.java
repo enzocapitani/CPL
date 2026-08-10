@@ -21,11 +21,11 @@ public class Menu {
      * @param options Vetor contendo as opções que serão exibidas.
      */
     public static void simple(String title, String options[]){
-        String separator = Menu.generateSeparator(title, options, '=');
+        String separator = Separator.generateSeparator(title, options, '=');
 
         // Gera o cabeçalho do menu
         System.out.println(separator);
-        System.out.println(Menu.generateCenterTitle(separator, title));
+        System.out.println(Title.generateCenterTitle(separator, title));
         System.out.println(separator);
 
         // Exibe todas as opções numeradas
@@ -49,11 +49,11 @@ public class Menu {
      * @param delay Tempo, em milissegundos, entre cada caractere exibido.
      */
     public static void simple(String title, String options[], int delay){
-        String separator = Menu.generateSeparator(title, options, '=');
+        String separator = Separator.generateSeparator(title, options, '=');
 
         // Gera o cabeçalho do menu utilizando efeito de escrita
         Write.type(separator, delay);
-        Write.type(Menu.generateCenterTitle(separator, title), delay);
+        Write.type(Title.generateCenterTitle(separator, title), delay);
         Write.type(separator, delay);
 
         // Exibe todas as opções numeradas com efeito de escrita
@@ -73,129 +73,14 @@ public class Menu {
      * @param options
      */
     public static void box(String title, String options[]){
-        String separator = generateSeparator(title, options, '-');
+        String separator = Separator.generateSeparator(title, options, '-');
 
         System.out.println(separator);
-        System.out.println(generateSurroundedTitle(separator, title, biggestElement(title, options)));
+        System.out.println(Title.generateSurroundedTitle(separator, title, Separator.biggestElement(title, options)));
         System.out.println(separator);
 
         writeOptions(options, separator.length());
         System.out.println(separator);
-    }
-
-    /**
-     * Gera automaticamente a linha separadora do menu.
-     *
-     * O tamanho da linha é baseado no maior texto encontrado entre
-     * o título e as opções do menu.
-     *
-     * @param title Título do menu.
-     * @param options Vetor contendo as opções.
-     * @param character o caractere do separador
-     * @return Uma String composta apenas pelo caractere '='.
-     */
-    public static String generateSeparator(String title, String options[], char character){
-        int maiorString = biggestElement(title, options);
-
-        // Multiplica o tamanho para gerar uma margem visual maior
-        maiorString *= 2;
-
-        StringBuilder sb = new StringBuilder();
-
-        // Cria a linha separadora
-        for(int i = 0; i < maiorString; i++){
-            sb.append(character);
-        }
-
-        return sb.toString();
-    }
-
-    /**
-     * Centraliza o título do menu em relação ao tamanho da linha
-     * separadora.
-     *
-     * @param separator Linha separadora utilizada como referência.
-     * @param title Título do menu.
-     * @return O título centralizado.
-     */
-    public static String generateCenterTitle(String separator, String title){
-
-        StringBuilder sb = new StringBuilder();
-
-        // Calcula a quantidade de espaços necessários
-        int espacoBranco = separator.length()/2 - title.length()/2;
-
-        // Adiciona os espaços antes do título
-        for(int i = 0; i < espacoBranco; i++){
-            sb.append(" ");
-        }
-
-        // Adiciona o título
-        for(int i = 0; i < title.length(); i++){
-            sb.append(title.charAt(i));
-        }
-
-        return sb.toString();
-
-    }
-
-    /**
-     * Centraliza o título do menu em relação ao tamanho da linha
-     * separadora e adiciona ao seu redor o caractere '|'.
-     *
-     * @param separator Linha separadora utilizada como referência.
-     * @param title Título do menu.
-     * @param biggestString Maior string entre as opções e o titulo
-     * @return O título centralizado e fechado por '|'.
-     */
-    private static String generateSurroundedTitle(String separator, String title, int biggestString){
-        StringBuilder sb = new StringBuilder();
-
-        int espacoBranco = separator.length()/2 - title.length()/2;
-
-        for(int i = 0; i < espacoBranco; i++){
-            if(i == 0){
-              sb.append("|");
-              continue;   
-            }
-            sb.append(" ");
-        }
-
-        // Adiciona o título
-        for(int i = 0; i < title.length(); i++){
-            sb.append(title.charAt(i));
-        }
-
-        if(biggestString % 2 != 0) espacoBranco -= 1;
-
-        for(int i = 0; i < espacoBranco; i++){
-            if(i == espacoBranco - 1){
-                sb.append("|");
-                continue;
-            }
-            sb.append(" ");
-        }
-
-        return sb.toString();
-
-    }
-
-    /**
-     * Procura o maior elemento entre o titulo e as opções
-     * 
-     * @param title o titulo do menu
-     * @param options as opcoes do menu
-     * @return o maior elemento entre o titulo e as opçoes
-     */
-    private static int biggestElement(String title, String[] options){
-        int maiorString = title.length();
-
-        // Procura o maior texto entre as opções
-        for(int i = 0; i < options.length; i++){
-            if(options[i].length() > maiorString) maiorString = options[i].length();
-        }
-
-        return maiorString;
     }
 
     /**
