@@ -53,8 +53,8 @@ public void genericFunction(){
 **Output:**
 
 ```text
-CPL is very useful!
-CPL is very useful!
+cpl is very useful!
+cpl is very useful!
 ```
 
 ---

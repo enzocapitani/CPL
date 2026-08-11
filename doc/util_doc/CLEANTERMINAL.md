@@ -2,7 +2,7 @@
 
 The `Terminal` class provides simple methods for **clearing the terminal screen** and **pausing execution** during Java applications.
 
-> **Package:** `CPL.util`
+> **Package:** `cpl.util`
 
 ## Methods
 
@@ -26,7 +26,7 @@ Clears the terminal screen according to the operating system on which the applic
 ```java id="9o2k1c"
 package example;
 
-import CPL.util.Terminal;
+import cpl.util.Terminal;
 
 public class Main {
 
@@ -73,7 +73,7 @@ Pauses the execution of the main thread for a specified amount of time in millis
 ```java id="kz9f1u"
 package example;
 
-import CPL.util.Terminal;
+import cpl.util.Terminal;
 
 public class Main {
 

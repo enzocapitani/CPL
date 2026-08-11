@@ -34,13 +34,13 @@ fazendo um efeito de pausa do programa.
 Exemplo:
 
 ```java
-   import CPL.util.Terminal;
+   import cpl.util.Terminal;
 
-    public static void main(String[] args) {
-        System.out.println("Estou");
-        Terminal.sleep(1000);
-        System.out.println(" dormindo...");
-    }
+public static void main(String[] args) {
+    System.out.println("Estou");
+    Terminal.sleep(1000);
+    System.out.println(" dormindo...");
+}
 ```
 
 # ✅⚙️ Version 0.033
@@ -66,11 +66,12 @@ simpleTypeMenu(String title, String options, int delay);
 
 Essas novas funções recebem como parâmetro o título do menu, um vetor de opções do menu e, a com efeito de escrita, o delay
 
-exemplo: 
-```java
-package CPL;
+exemplo:
 
-import CPL.menu.Menu;
+```java
+package cpl;
+
+import cpl.menu.Menu;
 
 public class Main {
     public static void main(String[] args) {

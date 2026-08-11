@@ -5,8 +5,8 @@
  * 
  */
 module Console_Project_Library {
-	exports CPL.style;
-	exports CPL.input;
-	exports CPL.util;
-	exports CPL.menu;
+	exports cpl.style;
+	exports cpl.input;
+	exports cpl.util;
+	exports cpl.menu;
 }

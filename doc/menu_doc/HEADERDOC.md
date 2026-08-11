@@ -9,7 +9,7 @@ Headers consist of a separator line and a centered title. The class also provide
 ## 📦 Package
 
 ```java
-CPL.menu
+cpl.menu
 ```
 
 ---
@@ -31,10 +31,10 @@ The class provides the following features:
 The class uses:
 
 ```java
-import CPL.style.Write;
+
 ```
 
-It also uses the `Separator` and `Title` classes from the `CPL.menu` package to generate the header structure.
+It also uses the `Separator` and `Title` classes from the `cpl.menu` package to generate the header structure.
 
 ---
 
@@ -246,7 +246,7 @@ Header.typeHeader("MAIN MENU", 50);
 
 # 🔗 Integration with Other Classes
 
-The `Header` class acts as an abstraction layer over other CPL features.
+The `Header` class acts as an abstraction layer over other cpl features.
 
 ### `Separator`
 

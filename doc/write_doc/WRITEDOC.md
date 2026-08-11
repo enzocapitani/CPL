@@ -1,8 +1,8 @@
 # Write
 
-The `Write` class is part of the `CPL.style` package and provides methods for writing text to the console with a **typewriter effect**. It also supports ANSI colors and customizable delays between characters.
+The `Write` class is part of the `cpl.style` package and provides methods for writing text to the console with a **typewriter effect**. It also supports ANSI colors and customizable delays between characters.
 
-> **Package:** `CPL.style`
+> **Package:** `cpl.style`
 
 ---
 
@@ -31,7 +31,7 @@ Writes a phrase character by character using the library's default delay (`50 ms
 ### Example
 
 ```java
-Write.type("Welcome to CPL!");
+Write.type("Welcome to cpl!");
 ```
 
 ---
@@ -179,8 +179,8 @@ WriteColor.RESET
 # Complete Example
 
 ```java
-import CPL.style.Write;
-import CPL.style.WriteColor;
+import cpl.style.Write;
+import cpl.style.WriteColor;
 
 public class Main {
 
@@ -191,14 +191,14 @@ public class Main {
         Write.type("Loading...", 80);
 
         Write.type(
-            "Success!",
-            WriteColor.GREEN
+                "Success!",
+                WriteColor.GREEN
         );
 
         Write.type(
-            "Error!",
-            WriteColor.RED,
-            100
+                "Error!",
+                WriteColor.RED,
+                100
         );
 
         Write.setWriteColor(WriteColor.BLUE);

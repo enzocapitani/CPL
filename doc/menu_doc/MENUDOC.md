@@ -2,7 +2,7 @@
 
 The `Menu` class allows you to create simple menus for terminal applications, with support for both instant display and a typing effect.
 
-> **Package:** `CPL.menu`
+> **Package:** `cpl.menu`
 
 ## Methods
 
@@ -20,16 +20,16 @@ Displays a simple menu in the terminal.
 #### Example
 
 ```java
-import CPL.menu.Menu;
+import cpl.menu.Menu;
 
 public class Main {
 
     public static void main(String[] args) {
 
         String[] options = {
-            "Start",
-            "Settings",
-            "Exit"
+                "Start",
+                "Settings",
+                "Exit"
         };
 
         Menu.simple("MAIN MENU", options);
@@ -67,16 +67,16 @@ Displays a menu using the typing effect provided by the `Write` class.
 #### Example
 
 ```java
-import CPL.menu.Menu;
+import cpl.menu.Menu;
 
 public class Main {
 
     public static void main(String[] args) {
 
         String[] options = {
-            "New Game",
-            "Load Game",
-            "Exit"
+                "New Game",
+                "Load Game",
+                "Exit"
         };
 
         Menu.simple("RPG", options, 30);
@@ -129,17 +129,17 @@ String
 ## Complete Example
 
 ```java
-import CPL.menu.Menu;
+import cpl.menu.Menu;
 
 public class Main {
 
     public static void main(String[] args) {
 
         String[] menu = {
-            "Register user",
-            "List users",
-            "Remove user",
-            "Exit"
+                "Register user",
+                "List users",
+                "Remove user",
+                "Exit"
         };
 
         Menu.simple("SYSTEM", menu);

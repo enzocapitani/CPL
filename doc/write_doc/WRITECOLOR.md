@@ -1,10 +1,10 @@
 # WriteColor
 
-The `WriteColor` enum is part of the `CPL.style` package and represents the ANSI colors used by the `Write` class.
+The `WriteColor` enum is part of the `cpl.style` package and represents the ANSI colors used by the `Write` class.
 
 Each constant automatically returns its corresponding ANSI code, allowing you to color terminal text easily.
 
-> **Package:** `CPL.style`
+> **Package:** `cpl.style`
 
 ---
 
@@ -99,7 +99,7 @@ System.out.print(WriteColor.GREEN.toString());
 # Complete Example
 
 ```java
-import CPL.style.WriteColor;
+import cpl.style.WriteColor;
 
 public class Main {
 
