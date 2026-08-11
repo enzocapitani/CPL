@@ -1,23 +1,23 @@
 # Menu
 
-A classe `Menu` permite criar menus simples para aplicações executadas no terminal, com suporte a exibição instantânea ou efeito de digitação.
+The `Menu` class allows you to create simple menus for terminal applications, with support for both instant display and a typing effect.
 
-> **Pacote:** `CPL.menu`
+> **Package:** `CPL.menu`
 
-## Métodos
+## Methods
 
 ### `simple(String title, String[] options)`
 
-Exibe um menu simples no terminal.
+Displays a simple menu in the terminal.
 
-#### Parâmetros
+#### Parameters
 
-| Parâmetro | Tipo | Descrição |
-|-----------|------|-----------|
-| `title` | `String` | Título exibido no topo do menu. |
-| `options` | `String[]` | Vetor contendo as opções do menu. |
+| Parameter | Type       | Description                             |
+| --------- | ---------- | --------------------------------------- |
+| `title`   | `String`   | Title displayed at the top of the menu. |
+| `options` | `String[]` | Array containing the menu options.      |
 
-#### Exemplo
+#### Example
 
 ```java
 import CPL.menu.Menu;
@@ -27,26 +27,26 @@ public class Main {
     public static void main(String[] args) {
 
         String[] options = {
-            "Iniciar",
-            "Configurações",
-            "Sair"
+            "Start",
+            "Settings",
+            "Exit"
         };
 
-        Menu.simple("MENU PRINCIPAL", options);
+        Menu.simple("MAIN MENU", options);
 
     }
 }
 ```
 
-**Saída:**
+**Output:**
 
 ```text
 ==============================
-        MENU PRINCIPAL
+          MAIN MENU
 ==============================
-1- Iniciar
-2- Configurações
-3- Sair
+1- Start
+2- Settings
+3- Exit
 ==============================
 ```
 
@@ -54,17 +54,17 @@ public class Main {
 
 ### `simple(String title, String[] options, int delay)`
 
-Exibe um menu utilizando o efeito de digitação da classe `Write`.
+Displays a menu using the typing effect provided by the `Write` class.
 
-#### Parâmetros
+#### Parameters
 
-| Parâmetro | Tipo | Descrição |
-|-----------|------|-----------|
-| `title` | `String` | Título do menu. |
-| `options` | `String[]` | Vetor contendo as opções. |
-| `delay` | `int` | Tempo (em milissegundos) entre cada caractere exibido. |
+| Parameter | Type       | Description                                            |
+| --------- | ---------- | ------------------------------------------------------ |
+| `title`   | `String`   | Menu title.                                            |
+| `options` | `String[]` | Array containing the menu options.                     |
+| `delay`   | `int`      | Time in milliseconds between each displayed character. |
 
-#### Exemplo
+#### Example
 
 ```java
 import CPL.menu.Menu;
@@ -74,9 +74,9 @@ public class Main {
     public static void main(String[] args) {
 
         String[] options = {
-            "Novo Jogo",
-            "Carregar",
-            "Sair"
+            "New Game",
+            "Load Game",
+            "Exit"
         };
 
         Menu.simple("RPG", options, 30);
@@ -87,17 +87,17 @@ public class Main {
 
 ---
 
-## Métodos auxiliares
+## Helper Methods
 
-Esses métodos fazem parte da implementação da classe e normalmente não precisam ser utilizados diretamente.
+These methods are part of the class implementation and normally do not need to be used directly.
 
 ### `generateSeparator(String title, String[] options)`
 
-Gera automaticamente a linha separadora (`=`) utilizada no menu.
+Automatically generates the separator line (`=`) used in the menu.
 
-O tamanho da linha é calculado utilizando o maior texto entre o título e as opções.
+The line length is calculated based on the longest text between the title and the options.
 
-**Retorna**
+**Returns**
 
 ```java
 String
@@ -107,9 +107,9 @@ String
 
 ### `generateCenterTitle(String separator, String title)`
 
-Centraliza o título utilizando o tamanho da linha separadora.
+Centers the title according to the length of the separator line.
 
-**Retorna**
+**Returns**
 
 ```java
 String
@@ -117,16 +117,16 @@ String
 
 ---
 
-## Características
+## Features
 
-- ✅ Criação rápida de menus para aplicações de terminal.
-- ✅ Numeração automática das opções.
-- ✅ Separador gerado automaticamente.
-- ✅ Título centralizado.
-- ✅ Suporte ao efeito de digitação através da classe `Write`.
-- ✅ Não requer criação de objetos (todos os métodos são `static`).
+* ✅ Quick menu creation for terminal applications.
+* ✅ Automatic option numbering.
+* ✅ Automatically generated separator.
+* ✅ Centered title.
+* ✅ Typing effect support through the `Write` class.
+* ✅ No object creation required (all methods are `static`).
 
-## Exemplo completo
+## Complete Example
 
 ```java
 import CPL.menu.Menu;
@@ -136,33 +136,33 @@ public class Main {
     public static void main(String[] args) {
 
         String[] menu = {
-            "Cadastrar usuário",
-            "Listar usuários",
-            "Remover usuário",
-            "Sair"
+            "Register user",
+            "List users",
+            "Remove user",
+            "Exit"
         };
 
-        Menu.simple("SISTEMA", menu);
+        Menu.simple("SYSTEM", menu);
 
     }
 }
 ```
 
-**Saída:**
+**Output:**
 
 ```text
 ========================================
-                SISTEMA
+                 SYSTEM
 ========================================
-1- Cadastrar usuário
-2- Listar usuários
-3- Remover usuário
-4- Sair
+1- Register user
+2- List users
+3- Remove user
+4- Exit
 ========================================
 ```
 
-## Observações
+## Notes
 
-- A largura do menu é calculada automaticamente com base no maior texto informado.
-- O título é centralizado em relação ao tamanho do separador.
-- Para utilizar `simpleTypeMenu()`, é necessário que a classe `Write` esteja disponível no projeto.
+* The menu width is automatically calculated based on the longest text provided.
+* The title is centered according to the separator length.
+* To use `simple(String title, String[] options, int delay)`, the `Write` class must be available in the project.
