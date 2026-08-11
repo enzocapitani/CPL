@@ -1,54 +1,58 @@
-# 📚⚙ CPL Console Project Library | Java 
-Biblioteca open source para desenvolvimento em terminal ou console
+# 📚⚙ CPL Console Project Library | Java
 
-Escreva com estilo, gere menus rapidamente, capture dados no terminal e mais!
-## 🤔 O que é essa biblioteca? 
+Open-source library for developing terminal or console applications.
 
-Essa biblioteca foi desenvolvida para facilitar a criação de aplicações em console utilizando Java. Seu principal objetivo é oferecer recursos que tornem o desenvolvimento mais simples, organizado e agradável, especialmente para quem está começando na programação.
+Write with style, generate menus quickly, capture user input from the terminal, and more!
 
-Com a CPL, é possível adicionar mais estilo às aplicações de terminal e utilizar utilitários que agilizam tarefas comuns, permitindo que o desenvolvedor foque na lógica do projeto em vez de reimplementar funcionalidades básicas.
+## 🤔 What is this library?
 
-## 💻⬇ Como baixar e usar o CPL?
+This library was developed to simplify the creation of console applications using Java. Its main goal is to provide features that make development simpler, more organized, and more enjoyable, especially for those who are just getting started with programming.
 
-Atenção! É essencial utilizar a versão do JDK 21 para melhor experiência.
+With CPL, you can add more style to terminal applications and use utilities that speed up common tasks, allowing developers to focus on their project's logic instead of reimplementing basic functionalities.
+
+## 💻⬇ How to download and use CPL?
+
+**Attention!** Using **JDK 21** is essential for the best experience.
 
 ### ⚙👉 Eclipse
 
-1. Baixe o arquivo `.jar` da biblioteca na página de **Releases** do projeto.
-2. No Eclipse, clique com o botão direito sobre o projeto.
-3. Selecione **Build Path → Configure Build Path...**
-4. Acesse a aba **Libraries**.
-5. Clique em **Add External JARs...**
-6. Selecione o arquivo `.jar` da CPL.
-7. Clique em **Apply and Close**.
+1. Download the library's `.jar` file from the project's **Releases** page.
+2. In Eclipse, right-click on the project.
+3. Select **Build Path → Configure Build Path...**
+4. Go to the **Libraries** tab.
+5. Click **Add External JARs...**
+6. Select the CPL `.jar` file.
+7. Click **Apply and Close**.
 
 ---
 
 ### ⚙👉 IntelliJ IDEA
 
-1. Baixe o arquivo `.jar` da biblioteca na página de **Releases** do projeto.
-2. Abra o projeto no IntelliJ.
-3. Vá em **File → Project Structure...** (`Ctrl + Alt + Shift + S`).
-4. Selecione **Modules → Dependencies**.
-5. Clique no botão **+** e escolha **JARs or Directories**.
-6. Selecione o arquivo `.jar` da CPL.
-7. Clique em **OK** e depois em **Apply**.
+1. Download the library's `.jar` file from the project's **Releases** page.
+2. Open your project in IntelliJ.
+3. Go to **File → Project Structure...** (`Ctrl + Alt + Shift + S`).
+4. Select **Modules → Dependencies**.
+5. Click the **+** button and select **JARs or Directories**.
+6. Select the CPL `.jar` file.
+7. Click **OK** and then **Apply**.
 
 ---
 
 ### ⚙👉 Visual Studio Code
 
-1. Baixe o arquivo `.jar` da biblioteca na página de **Releases** do projeto.
-2. Abra o projeto no VS Code.
-3. Crie (caso não exista) uma pasta chamada `lib` na raiz do projeto.
-4. Coloque o arquivo `.jar` da CPL dentro dessa pasta.
-5. No painel **JAVA PROJECTS**, localize **Referenced Libraries**.
-6. Clique no botão **+** (**Add JARs**) e selecione o arquivo `.jar` da pasta `lib`.
+1. Download the library's `.jar` file from the project's **Releases** page.
+2. Open your project in VS Code.
+3. Create a folder named `lib` in the project's root directory, if it does not already exist.
+4. Place the CPL `.jar` file inside this folder.
+5. In the **JAVA PROJECTS** panel, locate **Referenced Libraries**.
+6. Click the **+** button (**Add JARs**) and select the `.jar` file from the `lib` folder.
 
-Após a importação, a biblioteca estará disponível para uso no projeto.
+After importing the library, CPL will be available for use in your project.
 
-## Exemplo de código usando o CPL
-### Write e Terminal
+## Example of code using CPL
+
+### Write and Terminal
+
 ```java
 package principal;
 
@@ -57,17 +61,18 @@ import CPL.util.Terminal;
 
 public class Main {
 	public static void main(String[] args) {
-		Write.type("Olá mundo!!", 100);
+		Write.type("Hello world!!", 100);
 		Terminal.clean();
 	}
 }
-
 ```
-Escreve letra por letra e após limpa o terminal
 
+Writes the text letter by letter and then clears the terminal.
 
-# Licença 📃
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para mais informações.
+# License 📃
 
-# Créditos 👩‍💻
-Desenvolvido e publicado por **Enzo Capitani**, desenvolvedor de software e graduando em ciência da computação
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
+
+# Credits 👩‍💻
+
+Developed and published by **Enzo Capitani**, software developer and Computer Science undergraduate.
