@@ -1,100 +1,100 @@
 # Write
 
-A classe `Write` faz parte do pacote `CPL.style` e fornece métodos para escrever texto no console com um efeito de digitação (typewriter). Além disso, é possível utilizar cores ANSI e personalizar o tempo entre cada caractere.
+The `Write` class is part of the `CPL.style` package and provides methods for writing text to the console with a **typewriter effect**. It also supports ANSI colors and customizable delays between characters.
 
-> **Pacote:** `CPL.style`
+> **Package:** `CPL.style`
 
 ---
 
-## Visão Geral
+## Overview
 
-A classe possui métodos estáticos, portanto **não é necessário criar uma instância**.
+The class provides static methods, so **creating an instance is not necessary**.
 
 ```java
-Write.type("Olá, mundo!");
+Write.type("Hello, world!");
 ```
 
 ---
 
-# Métodos
+# Methods
 
 ## `type(String phrase)`
 
-Escreve uma frase caractere por caractere utilizando o delay padrão da biblioteca (50 ms).
+Writes a phrase character by character using the library's default delay (`50 ms`).
 
-### Parâmetros
+### Parameters
 
-| Nome | Tipo | Descrição |
-|------|------|-----------|
-| `phrase` | `String` | Texto que será exibido no console. |
+| Name     | Type     | Description                          |
+| -------- | -------- | ------------------------------------ |
+| `phrase` | `String` | Text to be displayed in the console. |
 
-### Exemplo
+### Example
 
 ```java
-Write.type("Bem-vindo ao CPL!");
+Write.type("Welcome to CPL!");
 ```
 
 ---
 
 ## `write(String phrase, int delay)`
 
-Escreve uma frase caractere por caractere utilizando um delay personalizado.
+Writes a phrase character by character using a custom delay.
 
-### Parâmetros
+### Parameters
 
-| Nome | Tipo | Descrição |
-|------|------|-----------|
-| `phrase` | `String` | Texto que será exibido. |
-| `delay` | `int` | Tempo (em milissegundos) entre cada caractere. |
+| Name     | Type     | Description                                   |
+| -------- | -------- | --------------------------------------------- |
+| `phrase` | `String` | Text to be displayed.                         |
+| `delay`  | `int`    | Time between each character, in milliseconds. |
 
-### Exemplo
+### Example
 
 ```java
-Write.type("Carregando...", 100);
+Write.type("Loading...", 100);
 ```
 
 ---
 
 ## `type(String phrase, WriteColor color)`
 
-Escreve uma frase utilizando uma cor ANSI e o delay padrão da biblioteca.
+Writes a phrase using an ANSI color and the library's default delay.
 
-Após terminar a escrita, a cor do terminal é restaurada automaticamente.
+After the text has finished being written, the terminal color is automatically restored.
 
-### Parâmetros
+### Parameters
 
-| Nome | Tipo | Descrição |
-|------|------|-----------|
-| `phrase` | `String` | Texto que será exibido. |
-| `color` | `WriteColor` | Cor utilizada durante a escrita. |
+| Name     | Type         | Description               |
+| -------- | ------------ | ------------------------- |
+| `phrase` | `String`     | Text to be displayed.     |
+| `color`  | `WriteColor` | Color used while writing. |
 
-### Exemplo
+### Example
 
 ```java
-Write.type("Operação concluída!", WriteColor.GREEN);
+Write.type("Operation completed!", WriteColor.GREEN);
 ```
 
 ---
 
 ## `write(String phrase, WriteColor color, int delay)`
 
-Escreve uma frase utilizando uma cor ANSI e um delay personalizado.
+Writes a phrase using an ANSI color and a custom delay.
 
-Após terminar a escrita, a cor do terminal é restaurada automaticamente.
+After the text has finished being written, the terminal color is automatically restored.
 
-### Parâmetros
+### Parameters
 
-| Nome | Tipo | Descrição |
-|------|------|-----------|
-| `phrase` | `String` | Texto que será exibido. |
-| `color` | `WriteColor` | Cor utilizada durante a escrita. |
-| `delay` | `int` | Tempo entre cada caractere (em milissegundos). |
+| Name     | Type         | Description                                   |
+| -------- | ------------ | --------------------------------------------- |
+| `phrase` | `String`     | Text to be displayed.                         |
+| `color`  | `WriteColor` | Color used while writing.                     |
+| `delay`  | `int`        | Time between each character, in milliseconds. |
 
-### Exemplo
+### Example
 
 ```java
 Write.type(
-    "Inicializando sistema...",
+    "Initializing system...",
     WriteColor.BLUE,
     75
 );
@@ -104,23 +104,23 @@ Write.type(
 
 ## `setWriteColor(WriteColor color)`
 
-Define a cor padrão da saída do terminal.
+Sets the default color for terminal output.
 
-Diferente dos métodos `write(...)`, essa configuração permanece ativa até que `resetWriteColor()` seja chamado.
+Unlike the `write(...)` methods, this setting remains active until `resetWriteColor()` is called.
 
-### Parâmetros
+### Parameters
 
-| Nome | Tipo | Descrição |
-|------|------|-----------|
-| `color` | `WriteColor` | Cor que será aplicada ao terminal. |
+| Name    | Type         | Description                          |
+| ------- | ------------ | ------------------------------------ |
+| `color` | `WriteColor` | Color to be applied to the terminal. |
 
-### Exemplo
+### Example
 
 ```java
 Write.setWriteColor(WriteColor.RED);
 
-System.out.println("Erro!");
-System.out.println("Outro erro!");
+System.out.println("Error!");
+System.out.println("Another error!");
 
 Write.resetWriteColor();
 ```
@@ -129,9 +129,9 @@ Write.resetWriteColor();
 
 ## `resetWriteColor()`
 
-Restaura a cor original do terminal.
+Restores the terminal's original color.
 
-### Exemplo
+### Example
 
 ```java
 Write.resetWriteColor();
@@ -139,23 +139,23 @@ Write.resetWriteColor();
 
 ---
 
-# Delay padrão
+# Default Delay
 
-A biblioteca utiliza um delay padrão de:
+The library uses a default delay of:
 
 ```text
 50 ms
 ```
 
-Esse valor é usado pelos métodos que não recebem um delay como parâmetro.
+This value is used by methods that do not receive a delay as a parameter.
 
 ---
 
-# Enum `WriteColor`
+# `WriteColor` Enum
 
-As cores disponíveis são definidas pelo enum `WriteColor`.
+The available colors are defined by the `WriteColor` enum.
 
-Exemplo:
+Example:
 
 ```java
 WriteColor.RED
@@ -166,17 +166,17 @@ WriteColor.RESET
 
 ---
 
-# Observações
+# Notes
 
-- O efeito de digitação é feito utilizando `Thread.sleep()`.
-- O delay é informado em **milissegundos**.
-- Os métodos `write(...)` sempre quebram a linha ao final da escrita.
-- O suporte às cores ANSI depende do terminal utilizado. Alguns consoles de IDEs podem não exibir as cores corretamente.
-- Os métodos `write(...)` que recebem uma cor restauram automaticamente a cor original do terminal ao finalizar a escrita.
+* The typewriter effect is implemented using `Thread.sleep()`.
+* The delay is specified in **milliseconds**.
+* The `write(...)` methods always add a line break after the text has finished being written.
+* ANSI color support depends on the terminal being used. Some IDE consoles may not display colors correctly.
+* The `write(...)` methods that receive a color automatically restore the terminal's original color after finishing the text.
 
 ---
 
-# Exemplo completo
+# Complete Example
 
 ```java
 import CPL.style.Write;
@@ -186,29 +186,29 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Write.type("Olá!");
+        Write.type("Hello!");
 
-        Write.type("Carregando...", 80);
+        Write.type("Loading...", 80);
 
         Write.type(
-            "Sucesso!",
+            "Success!",
             WriteColor.GREEN
         );
 
         Write.type(
-            "Erro!",
+            "Error!",
             WriteColor.RED,
             100
         );
 
         Write.setWriteColor(WriteColor.BLUE);
 
-        System.out.println("Texto azul.");
-        System.out.println("Outro texto azul.");
+        System.out.println("Blue text.");
+        System.out.println("Another blue text.");
 
         Write.resetWriteColor();
 
-        System.out.println("Cor restaurada.");
+        System.out.println("Color restored.");
     }
 
 }

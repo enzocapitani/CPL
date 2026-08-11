@@ -1,12 +1,12 @@
 # `Header`
 
-A classe `Header` fornece métodos para criação e exibição de **cabeçalhos formatados no terminal**.
+The `Header` class provides methods for creating and displaying **formatted headers in the terminal**.
 
-Os cabeçalhos são compostos por uma linha divisória e um título centralizado. A classe também oferece uma versão animada, utilizando a classe `Write` para exibir o cabeçalho caractere por caractere.
+Headers consist of a separator line and a centered title. The class also provides an animated version using the `Write` class to display the header character by character.
 
 ---
 
-## 📦 Pacote
+## 📦 Package
 
 ```java
 CPL.menu
@@ -14,65 +14,65 @@ CPL.menu
 
 ---
 
-## 🔧 Características
+## 🔧 Features
 
-A classe possui as seguintes funcionalidades:
+The class provides the following features:
 
-* 📌 Criar cabeçalhos centralizados.
-* ➖ Gerar automaticamente divisórias de acordo com o tamanho do título.
-* ✏️ Permitir uma divisória personalizada.
-* ⏱️ Exibir cabeçalhos com animação de digitação.
-* 🎨 Permitir o uso das funcionalidades de escrita da classe `Write`.
+* 📌 Create centered headers.
+* ➖ Automatically generate separators based on the title length.
+* ✏️ Use a custom separator.
+* ⏱️ Display headers with a typing animation.
+* 🎨 Use the writing features provided by the `Write` class.
 
 ---
 
-## Dependências
+## Dependencies
 
-A classe utiliza:
+The class uses:
 
 ```java
 import CPL.style.Write;
 ```
 
-Além disso, utiliza as classes `Separator` e `Title` do pacote `CPL.menu` para gerar a estrutura do cabeçalho.
+It also uses the `Separator` and `Title` classes from the `CPL.menu` package to generate the header structure.
 
 ---
 
-# Métodos
+# Methods
 
 ## `header(String title)`
 
-Cria e exibe um cabeçalho utilizando uma **divisória gerada automaticamente**.
+Creates and displays a header using an **automatically generated separator**.
 
-A largura da divisória é determinada com base no tamanho do título.
+The separator width is determined based on the title length.
 
-### Parâmetros
+### Parameters
 
-| Parâmetro | Tipo     | Descrição                             |
-| --------- | -------- | ------------------------------------- |
-| `title`   | `String` | Título que será exibido no cabeçalho. |
+| Parameter | Type     | Description                    |
+| --------- | -------- | ------------------------------ |
+| `title`   | `String` | Title displayed in the header. |
 
-### Exemplo
+### Example
 
 ```java
-Header.header("Sistema de Biblioteca");
+Header.header("Library Management System");
 ```
 
-Saída aproximada:
+Approximate output:
 
 ```text
 -------------------------------------
-       Sistema de Biblioteca
+       Library Management System
 -------------------------------------
 ```
 
-A divisória é gerada automaticamente através de:
+The separator is automatically generated using:
 
 ```java
 Separator.generateSeparator(title);
 ```
 
-O título é centralizado através de:
+The title is centered using:
 
 ```java
 Title.generateCenterTitle(separator, title);
@@ -82,42 +82,42 @@ Title.generateCenterTitle(separator, title);
 
 ## `header(String title, String separator)`
 
-Cria e exibe um cabeçalho utilizando uma **divisória definida pelo usuário**.
+Creates and displays a header using a **user-defined separator**.
 
-Essa versão permite maior controle sobre a aparência do cabeçalho.
+This version provides greater control over the appearance of the header.
 
-### Parâmetros
+### Parameters
 
-| Parâmetro   | Tipo     | Descrição                                     |
-| ----------- | -------- | --------------------------------------------- |
-| `title`     | `String` | Título que será exibido.                      |
-| `separator` | `String` | Divisória utilizada acima e abaixo do título. |
+| Parameter   | Type     | Description                                |
+| ----------- | -------- | ------------------------------------------ |
+| `title`     | `String` | Title displayed in the header.             |
+| `separator` | `String` | Separator displayed above and below title. |
 
-### Exemplo
+### Example
 
 ```java
-Header.header("Menu Principal", "==============================");
+Header.header("Main Menu", "==============================");
 ```
 
-Saída:
+Output:
 
 ```text
 ==============================
-        Menu Principal
+          Main Menu
 ==============================
 ```
 
-Também é possível utilizar diferentes caracteres:
+Different characters can also be used:
 
 ```java
-Header.header("Configurações", "##############################");
+Header.header("Settings", "##############################");
 ```
 
-Saída:
+Output:
 
 ```text
 ##############################
-        Configurações
+           Settings
 ##############################
 ```
 
@@ -125,33 +125,33 @@ Saída:
 
 ## `typeHeader(String title)`
 
-Cria e exibe um cabeçalho com **animação de digitação**.
+Creates and displays a header with a **typing animation**.
 
-A divisória é gerada automaticamente e todos os elementos do cabeçalho são exibidos utilizando o delay padrão da classe `Write`.
+The separator is automatically generated, and all header elements are displayed using the default delay from the `Write` class.
 
-### Parâmetros
+### Parameters
 
-| Parâmetro | Tipo     | Descrição                |
-| --------- | -------- | ------------------------ |
-| `title`   | `String` | Título que será exibido. |
+| Parameter | Type     | Description                    |
+| --------- | -------- | ------------------------------ |
+| `title`   | `String` | Title displayed in the header. |
 
-### Exemplo
+### Example
 
 ```java
-Header.typeHeader("Sistema de Biblioteca");
+Header.typeHeader("Library Management System");
 ```
 
-O cabeçalho será exibido de forma animada:
+The header will be displayed with an animation:
 
 ```text
 -------------------------------------
-       Sistema de Biblioteca
+       Library Management System
 -------------------------------------
 ```
 
-Porém, cada caractere será apresentado gradualmente.
+However, each character will appear gradually.
 
-Internamente, o método utiliza:
+Internally, the method uses:
 
 ```java
 Write.type(separator);
@@ -163,94 +163,94 @@ Write.type(separator);
 
 ## `typeHeader(String title, int delay)`
 
-Cria e exibe um cabeçalho animado utilizando um **delay personalizado**.
+Creates and displays an animated header using a **custom delay**.
 
-O delay é aplicado individualmente a cada parte do cabeçalho.
+The delay is applied individually to each part of the header.
 
-### Parâmetros
+### Parameters
 
-| Parâmetro | Tipo     | Descrição                                         |
-| --------- | -------- | ------------------------------------------------- |
-| `title`   | `String` | Título que será exibido.                          |
-| `delay`   | `int`    | Intervalo entre cada caractere, em milissegundos. |
+| Parameter | Type     | Description                                    |
+| --------- | -------- | ---------------------------------------------- |
+| `title`   | `String` | Title displayed in the header.                 |
+| `delay`   | `int`    | Delay between each character, in milliseconds. |
 
-### Exemplo
+### Example
 
 ```java
-Header.typeHeader("Carregando sistema...", 75);
+Header.typeHeader("Loading system...", 75);
 ```
 
-Nesse caso, cada caractere será exibido com um intervalo de `75 ms`.
+In this case, each character will be displayed with a `75 ms` delay.
 
-Para uma animação mais rápida:
+For a faster animation:
 
 ```java
-Header.typeHeader("Carregando...", 20);
+Header.typeHeader("Loading...", 20);
 ```
 
-Para uma animação mais lenta:
+For a slower animation:
 
 ```java
-Header.typeHeader("Carregando...", 150);
-```
-
----
-
-# 📋 Resumo da API
-
-| Método                    | Divisória     | Animação | Delay         |
-| ------------------------- | ------------- | -------- | ------------- |
-| `header(String)`          | Automática    | ❌        | —             |
-| `header(String, String)`  | Personalizada | ❌        | —             |
-| `typeHeader(String)`      | Automática    | ✅        | Padrão        |
-| `typeHeader(String, int)` | Automática    | ✅        | Personalizado |
-
----
-
-# 🧩 Exemplos de utilização
-
-## Cabeçalho simples
-
-```java
-Header.header("MENU PRINCIPAL");
+Header.typeHeader("Loading...", 150);
 ```
 
 ---
 
-## Cabeçalho com divisória personalizada
+# 📋 API Summary
+
+| Method                    | Separator | Animation | Delay   |
+| ------------------------- | --------- | --------- | ------- |
+| `header(String)`          | Automatic | ❌         | —       |
+| `header(String, String)`  | Custom    | ❌         | —       |
+| `typeHeader(String)`      | Automatic | ✅         | Default |
+| `typeHeader(String, int)` | Automatic | ✅         | Custom  |
+
+---
+
+# 🧩 Usage Examples
+
+## Simple Header
+
+```java
+Header.header("MAIN MENU");
+```
+
+---
+
+## Header with a Custom Separator
 
 ```java
 Header.header(
-    "MENU PRINCIPAL",
+    "MAIN MENU",
     "================================"
 );
 ```
 
 ---
 
-## Cabeçalho animado
+## Animated Header
 
 ```java
-Header.typeHeader("MENU PRINCIPAL");
+Header.typeHeader("MAIN MENU");
 ```
 
 ---
 
-## Cabeçalho animado com velocidade personalizada
+## Animated Header with Custom Speed
 
 ```java
-Header.typeHeader("MENU PRINCIPAL", 50);
+Header.typeHeader("MAIN MENU", 50);
 ```
 
 ---
 
-# 🔗 Integração com outras classes
+# 🔗 Integration with Other Classes
 
-A classe `Header` funciona como uma camada de abstração sobre outras funcionalidades da CPL.
+The `Header` class acts as an abstraction layer over other CPL features.
 
 ### `Separator`
 
-Responsável por gerar automaticamente a divisória:
+Responsible for automatically generating the separator:
 
 ```java
 String separator = Separator.generateSeparator(title);
@@ -258,7 +258,7 @@ String separator = Separator.generateSeparator(title);
 
 ### `Title`
 
-Responsável por centralizar o título de acordo com o tamanho da divisória:
+Responsible for centering the title according to the separator length:
 
 ```java
 Title.generateCenterTitle(separator, title);
@@ -266,71 +266,71 @@ Title.generateCenterTitle(separator, title);
 
 ### `Write`
 
-Utilizada pelos métodos `typeHeader()` para adicionar a animação de digitação:
+Used by the `typeHeader()` methods to add the typing animation:
 
 ```java
 Write.type(separator);
 ```
 
-Dessa forma, `Header` combina diferentes funcionalidades da biblioteca para simplificar a criação de interfaces de terminal.
+This allows `Header` to combine multiple library features and simplify the creation of terminal interfaces.
 
 ---
 
-# 💡 Exemplo em uma aplicação
+# 💡 Example in an Application
 
-A classe pode ser utilizada para estruturar diferentes partes de uma aplicação de console:
+The class can be used to structure different sections of a console application:
 
 ```java
-Header.header("SISTEMA DE BIBLIOTECA");
+Header.header("LIBRARY MANAGEMENT SYSTEM");
 
-System.out.println("1 - Cadastrar livro");
-System.out.println("2 - Listar livros");
-System.out.println("3 - Emprestar livro");
-System.out.println("4 - Devolver livro");
-System.out.println("0 - Sair");
+System.out.println("1 - Register book");
+System.out.println("2 - List books");
+System.out.println("3 - Borrow book");
+System.out.println("4 - Return book");
+System.out.println("0 - Exit");
 ```
 
-Também pode ser utilizada junto à animação:
+It can also be used together with the typing animation:
 
 ```java
-Header.typeHeader("SISTEMA DE BIBLIOTECA", 30);
+Header.typeHeader("LIBRARY MANAGEMENT SYSTEM", 30);
 
-Write.type("1 - Cadastrar livro");
-Write.type("2 - Listar livros");
-Write.type("3 - Emprestar livro");
-Write.type("4 - Devolver livro");
-Write.type("0 - Sair");
+Write.type("1 - Register book");
+Write.type("2 - List books");
+Write.type("3 - Borrow book");
+Write.type("4 - Return book");
+Write.type("0 - Exit");
 ```
 
 ---
 
-## ⚠️ Observações
+## ⚠️ Notes
 
-* A centralização do título depende do tamanho da `separator`.
-* Quando nenhuma divisória é fornecida, ela é gerada automaticamente através de `Separator`.
-* `typeHeader()` utiliza a classe `Write`, portanto possui o mesmo comportamento de delay dessa classe.
-* O delay é informado em **milissegundos**.
-* A classe possui apenas métodos `static`, portanto não é necessário criar uma instância de `Header`.
+* Title centering depends on the size of the `separator`.
+* When no separator is provided, it is automatically generated using `Separator`.
+* `typeHeader()` uses the `Write` class and therefore follows the same delay behavior.
+* The delay is specified in **milliseconds**.
+* The class only contains `static` methods, so creating a `Header` instance is not necessary.
 
-### Exemplo
+### Example
 
-Não é necessário:
+There is no need to do this:
 
 ```java
 Header header = new Header();
 ```
 
-Basta utilizar:
+Simply use:
 
 ```java
-Header.header("Meu Sistema");
+Header.header("My System");
 ```
 
 ---
 
-## 📄 Estrutura da classe
+## 📄 Class Structure
 
-De forma simplificada, a classe pode ser representada da seguinte maneira:
+In simplified form, the class can be represented as follows:
 
 ```text
 Header
@@ -353,4 +353,4 @@ Header
     └── Write
 ```
 
-A principal finalidade da classe é **simplificar a criação de cabeçalhos padronizados em aplicações de terminal**, evitando que o desenvolvedor precise implementar manualmente a geração das divisórias e o alinhamento dos títulos.
+The main purpose of the class is to **simplify the creation of standardized headers in terminal applications**, eliminating the need for developers to manually implement separator generation and title alignment.

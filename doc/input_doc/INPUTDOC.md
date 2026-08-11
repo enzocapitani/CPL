@@ -1,30 +1,47 @@
 # Input Class
-## Utilidades
-Capturar dados inseridos no terminal pelo usuário utilizando o Scanner, ela possui função para 4 tipos de valores: String, double, int e boolean.
 
-Atenção! Essa classe não possui tratamento de erros para a entrada de dados, essa tarefa é designado ao próprio programador 
-## Funções
+## Utilities
 
-### catchBoolean()
-Essa função tem como objetivo capturar o próximo valor booleano digitado no terminal pelo usuário, a função analisa o valor e retorna esse valor, exemplo prático:
+Capture data entered by the user in the terminal using `Scanner`. The `Input` class provides functions for four types of values: `String`, `double`, `int`, and `boolean`.
+
+> **Attention:** This class does not provide error handling for user input. Handling invalid input is the responsibility of the programmer.
+
+## Functions
+
+### `catchBoolean()`
+
+This function captures the next boolean value entered by the user in the terminal, analyzes it, and returns the value.
+
+#### Example
+
 ```java
 public void genericFunction(){
     boolean userValue = Input.catchBoolean();
     System.out.println(userValue);
 }
 ```
-Saída: 
 
+**Output:**
+
+```text
 true
 true
+```
 
-ou
+or
 
+```text
 false
 false
+```
 
-### catchString()
-A partir da primeira função citada ela vai seguir um padrão, ou seja, a função vai esperar um dado em String analisa e retorna esse valor, exemplo prático:
+---
+
+### `catchString()`
+
+Following the same pattern as the previous function, `catchString()` waits for a `String` value entered by the user, reads it, and returns the value.
+
+#### Example
 
 ```java
 public void genericFunction(){
@@ -32,12 +49,21 @@ public void genericFunction(){
     System.out.println(userValue);
 }
 ```
-Saída:<br>
-CPL é muito útil!<br>
-CPL é muito útil!
 
-### catchInt()
-A função vai esperar um dado em int analisa e retorna esse valor, exemplo prático:
+**Output:**
+
+```text
+CPL is very useful!
+CPL is very useful!
+```
+
+---
+
+### `catchInt()`
+
+This function waits for an `int` value entered by the user, reads it, and returns the value.
+
+#### Example
 
 ```java
 public void genericFunction(){
@@ -45,12 +71,21 @@ public void genericFunction(){
     System.out.println(userValue);
 }
 ```
-Saída:<br>
-100<br>
-100
 
-### catchDouble()
-A função vai esperar um dado em double analisa e retorna esse valor, exemplo prático:
+**Output:**
+
+```text
+100
+100
+```
+
+---
+
+### `catchDouble()`
+
+This function waits for a `double` value entered by the user, reads it, and returns the value.
+
+#### Example
 
 ```java
 public void genericFunction(){
@@ -58,17 +93,26 @@ public void genericFunction(){
     System.out.println(userValue);
 }
 ```
-Saída:<br>
-5.94<br>
-5.94
 
-## Exemplo detalhado em soma simples
+**Output:**
+
+```text
+5.94
+5.94
+```
+
+---
+
+## Detailed Example: Simple Addition
+
+The following example demonstrates how the `Input` class can be used to capture different types of user input in a simple addition program.
+
 ```java
 public void sum(){
     System.out.println("Hey! What is your name?");
     String name = Input.catchString();
 
-    System.out.println("Lets go sum!");
+    System.out.println("Let's calculate a sum!");
 
     System.out.println("What is the first value?");
     int value1 = Input.catchInt();
@@ -76,14 +120,14 @@ public void sum(){
     System.out.println("What is the second value?");
     int value2 = Input.catchInt();
 
-    System.out.println("Do you wanna view the sum? true/false");
+    System.out.println("Do you want to see the sum? true/false");
     boolean answer = Input.catchBoolean();
 
     if(answer){
         int sum = value1 + value2;
-        System.out.println("Sum: "+sum);
+        System.out.println("Sum: " + sum);
     }else{
-        System.out.println("Okay, bye "+name+"!");
+        System.out.println("Okay, bye " + name + "!");
     }
 }
 ```

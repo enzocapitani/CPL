@@ -1,74 +1,74 @@
 # WriteColor
 
-O enum `WriteColor` faz parte do pacote `CPL.style` e representa as cores ANSI utilizadas pela classe `Write`.
+The `WriteColor` enum is part of the `CPL.style` package and represents the ANSI colors used by the `Write` class.
 
-Cada constante retorna automaticamente o código ANSI correspondente, permitindo colorir textos no terminal de forma simples.
+Each constant automatically returns its corresponding ANSI code, allowing you to color terminal text easily.
 
-> **Pacote:** `CPL.style`
+> **Package:** `CPL.style`
 
 ---
 
-# Visão Geral
+# Overview
 
-O `WriteColor` é utilizado pelos métodos da classe `Write` e também pode ser usado diretamente com `System.out.print()` ou `System.out.println()`.
+`WriteColor` is used by the methods of the `Write` class and can also be used directly with `System.out.print()` or `System.out.println()`.
 
-Exemplo:
+Example:
 
 ```java
 System.out.print(WriteColor.RED);
-System.out.println("Texto vermelho");
+System.out.println("Red text");
 System.out.print(WriteColor.RESET);
 ```
 
-Como o método `toString()` foi sobrescrito, não é necessário chamar nenhum método para obter o código ANSI.
+Since the `toString()` method is overridden, there is no need to call any additional method to obtain the ANSI code.
 
 ---
 
-# Constantes
+# Constants
 
 ## `RED`
 
-Define a cor do texto como vermelho.
+Sets the text color to red.
 
-### Exemplo
+### Example
 
 ```java
-Write.type("Erro!", WriteColor.RED);
+Write.type("Error!", WriteColor.RED);
 ```
 
 ---
 
 ## `GREEN`
 
-Define a cor do texto como verde.
+Sets the text color to green.
 
-### Exemplo
+### Example
 
 ```java
-Write.type("Operação realizada com sucesso!", WriteColor.GREEN);
+Write.type("Operation completed successfully!", WriteColor.GREEN);
 ```
 
 ---
 
 ## `BLUE`
 
-Define a cor do texto como azul.
+Sets the text color to blue.
 
-### Exemplo
+### Example
 
 ```java
-Write.type("Informação", WriteColor.BLUE);
+Write.type("Information", WriteColor.BLUE);
 ```
 
 ---
 
 ## `RESET`
 
-Restaura a cor original do terminal.
+Restores the terminal's original color.
 
-Essa constante normalmente é utilizada automaticamente pela classe `Write`, mas também pode ser usada manualmente.
+This constant is normally used automatically by the `Write` class, but it can also be used manually.
 
-### Exemplo
+### Example
 
 ```java
 System.out.print(WriteColor.RESET);
@@ -76,19 +76,19 @@ System.out.print(WriteColor.RESET);
 
 ---
 
-# Método sobrescrito
+# Overridden Method
 
 ## `toString()`
 
-Retorna o código ANSI correspondente à cor.
+Returns the ANSI code corresponding to the color.
 
-Graças à sobrescrita deste método, basta imprimir o enum diretamente:
+Thanks to this method override, the enum can be printed directly:
 
 ```java
 System.out.print(WriteColor.GREEN);
 ```
 
-Em vez de:
+Instead of:
 
 ```java
 System.out.print(WriteColor.GREEN.toString());
@@ -96,7 +96,7 @@ System.out.print(WriteColor.GREEN.toString());
 
 ---
 
-# Exemplo completo
+# Complete Example
 
 ```java
 import CPL.style.WriteColor;
@@ -106,16 +106,16 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.print(WriteColor.RED);
-        System.out.println("Texto em vermelho");
+        System.out.println("Red text");
 
         System.out.print(WriteColor.GREEN);
-        System.out.println("Texto em verde");
+        System.out.println("Green text");
 
         System.out.print(WriteColor.BLUE);
-        System.out.println("Texto em azul");
+        System.out.println("Blue text");
 
         System.out.print(WriteColor.RESET);
-        System.out.println("Cor restaurada");
+        System.out.println("Color restored");
     }
 
 }
@@ -123,9 +123,9 @@ public class Main {
 
 ---
 
-# Observações
+# Notes
 
-- As cores utilizam **ANSI Escape Codes**.
-- O suporte às cores depende do terminal utilizado.
-- Alguns consoles de IDEs podem não interpretar códigos ANSI corretamente.
-- A constante `RESET` deve ser utilizada sempre que desejar retornar à cor padrão do terminal.
+* The colors use **ANSI Escape Codes**.
+* Color support depends on the terminal being used.
+* Some IDE consoles may not interpret ANSI codes correctly.
+* The `RESET` constant should be used whenever you want to return to the terminal's default color.
