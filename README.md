@@ -48,17 +48,17 @@ Atenção! É essencial utilizar a versão do JDK 21 para melhor experiência.
 Após a importação, a biblioteca estará disponível para uso no projeto.
 
 ## Exemplo de código usando o CPL
-### Write e CleanTerminal
+### Write e Terminal
 ```java
 package principal;
 
 import CPL.style.Write;
-import CPL.util.CleanTerminal;
+import CPL.util.Terminal;
 
 public class Main {
 	public static void main(String[] args) {
-		Write.write("Olá mundo!!", 100);
-		CleanTerminal.clean();
+		Write.type("Olá mundo!!", 100);
+		Terminal.clean();
 	}
 }
 
