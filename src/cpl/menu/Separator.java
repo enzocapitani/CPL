@@ -1,4 +1,4 @@
-package CPL.menu;
+package cpl.menu;
 
 public class Separator {
 

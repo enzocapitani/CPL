@@ -1,6 +1,6 @@
-package CPL.menu;
+package cpl.menu;
 
-import CPL.style.Write;
+import cpl.style.Write;
 
 /**
  * Classe responsável pela criação de menus simples para aplicações

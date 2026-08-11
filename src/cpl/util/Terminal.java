@@ -1,10 +1,10 @@
-package CPL.util;
+package cpl.util;
 
 public class Terminal {
 	
 	/**
-	 * Esse método funciona apenas se o seu programa java está sendo rodado no terminal
-	 * em console de IDE costuma não funcionar
+	 * This method only works if your Java program is running in the terminal;
+     * it usually does not work in an IDE console.
 	 */
 	public static void clean(){
 		
@@ -23,10 +23,10 @@ public class Terminal {
     }
 
     /**
-    * Esse método funciona para a thread principal parar de processar por um momento 
-    * ele já lida com o problema de ter que ficar colocando o try catch
-    * 
-    * @param milisec o tempo em milissegundos que vai parar
+     * This method pauses the main thread's processing for a moment.
+     * It handles the need for repetitive try-catch blocks.
+     *
+     * @param milisec the duration of the pause in milliseconds.
     */
     public static void sleep(int milisec){
         try{

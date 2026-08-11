@@ -1,11 +1,11 @@
-package CPL.style;
+package cpl.style;
 
 /**
-* Enum para as cores no WriteColor, os valores retornam valores em ANSI em que o terminal consegue ler
+* Enum for colors in WriteColor, the values return ANSI codes that the terminal can read.
 */
 public enum WriteColor {
     
-    //Esse volta a cor original do terminal
+    // Calling this reverts it to the original color.
     RESET("\u001B[0m"),
 
     // Cores padrão
@@ -18,7 +18,7 @@ public enum WriteColor {
     CYAN("\u001B[36m"),
     WHITE("\u001B[37m"),
 
-    // Cores brilhantes
+    // Bright colors
     BRIGHT_BLACK("\u001B[90m"),
     BRIGHT_RED("\u001B[91m"),
     BRIGHT_GREEN("\u001B[92m"),
@@ -34,7 +34,7 @@ public enum WriteColor {
         this.ansi = ansi;
     }
     
-    //Sobreposição do toString para facilitar a escrita do enum
+    // Overriding toString to simplify writing the enum.
     @Override
     public String toString(){
         return ansi;
