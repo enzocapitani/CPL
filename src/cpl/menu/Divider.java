@@ -1,6 +1,6 @@
 package cpl.menu;
 
-public class Separator {
+public class Divider {
 
     /**
      * Gera automaticamente a linha separadora do menu.
@@ -13,7 +13,7 @@ public class Separator {
      * @param character o caractere do separador
      * @return Uma String composta apenas pelo caractere '='.
      */
-    public static String generateSeparator(String title, String options[], char character){
+    public static String generateDivider(String title, String options[], char character){
         int maiorString = biggestElement(title, options);
 
         // Multiplica o tamanho para gerar uma margem visual maior
@@ -35,7 +35,7 @@ public class Separator {
      * @param title o titulo que vai ser comparado
      * @return retorna em string um separador relativo ao titulo
      */
-    public static String generateSeparator(String title){
+    public static String generateDivider(String title){
         StringBuilder sb = new StringBuilder();
 
         for(int i = 0; i < title.length()*2; i++){
@@ -47,7 +47,7 @@ public class Separator {
     }
 
     /**
-     * Procura o maior elemento entre o titulo e as opções
+     * Procura o maior elemento entre uma string e as opções
      *
      * @param title o titulo do menu
      * @param options as opcoes do menu

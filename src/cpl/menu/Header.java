@@ -4,26 +4,79 @@ import cpl.style.Write;
 
 public class Header {
 
-    //TODO : Verificar essa classe, ta meio esquisita
-    //TODO : adicionar metodo de efeito de digitação com cabeçalho pré definido
-    //TODO : fazer métodos não estáticos, onde o usuário muda apenas uma vez o delay e o separador
+
+    private String divider;
+    private int delay;
+
+    public Header(){
+        this.delay = 50;
+    }
+
+    public void simple(String title){
+        if(dividerIsNull()){
+            header(title);
+        }else{
+            header(title, divider);
+        }
+    }
+
+    public void type(String title){
+        if(dividerIsNull()){
+            typeHeader(title, getDelay());
+        } else {
+            typeHeader(title, getDelay(), getDivider());
+        }
+    }
+
+
+    public void type(String title, int delay){
+        if(dividerIsNull()){
+            typeHeader(title, delay);
+        } else {
+            typeHeader(title, delay, getDivider());
+        }
+    }
+
+    private boolean dividerIsNull(){
+        if(getDivider() == null) return true;
+
+        return false;
+    }
+
+    public int getDelay() {
+        return delay;
+    }
+
+    public void setDelay(int delay) {
+        this.delay = delay;
+    }
+
+    public String getDivider() {
+        return divider;
+    }
+
+    public void setDivider(String divider){
+        this.divider = divider;
+    }
+
+    // ---------------------------------------------------------------------------------
+    // -------------------------------- STATIC METHODS  --------------------------------
+    // ---------------------------------------------------------------------------------
 
     /**
-     * Writes a simplified header to the terminal; dividers are generated based on the title length,
+     * Writes a simplified header on the terminal, dividers are generated based on the title length,
      * The divider is approximately twice the length of the title
      *
      * @param title the header title
      */
     public static void header(String title){
-        String separator = Separator.generateSeparator(title);
+        String separator = Divider.generateDivider(title);
 
-        System.out.println(separator);
-        System.out.println(Title.generateCenterTitle(separator, title));
-        System.out.println(separator);
+        header(title, separator);
     }
 
     /**
-     * Writes a simplified header to the terminal; the user have to instance the separator on this function.
+     * Writes a simplified header to the terminal, the user have to instance the separator on this function.
      *
      * @param title the header title
      * @param separator the separator
@@ -35,14 +88,14 @@ public class Header {
     }
 
     /**
-     * Writes a simplified header to the terminal; dividers are generated based on the title length,
+     * Writes a simplified header to the terminal with effect of typing
      * and the divider is approximately twice the length of the title.
      *
      * @param title the header title
      * @param delay the typing effect delay
      */
     public static void typeHeader(String title, int delay){
-        String separator = Separator.generateSeparator(title);
+        String separator = Divider.generateDivider(title);
 
         Write.type(separator, delay);
         Write.type(Title.generateCenterTitle(separator, title), delay);
@@ -71,7 +124,7 @@ public class Header {
      * @param title the header title
      */
     public static void typeHeader(String title){
-        String separator = Separator.generateSeparator(title);
+        String separator = Divider.generateDivider(title);
 
         Write.type(separator);
         Write.type(Title.generateCenterTitle(separator, title));
