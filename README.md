@@ -1,4 +1,4 @@
-# 📚⚙ cpl Console Project Library | Java
+# 📚⚙ CPL | Console Project Library | Java
 
 Open-source library for developing terminal or console applications.
 
