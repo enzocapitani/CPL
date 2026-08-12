@@ -21,7 +21,7 @@ public class Menu {
      * @param options Vetor contendo as opções que serão exibidas.
      */
     public static void simple(String title, String options[]){
-        String separator = Separator.generateSeparator(title, options, '=');
+        String separator = Divider.generateDivider(title, options, '=');
 
         // Gera o cabeçalho do menu
         System.out.println(separator);
@@ -49,7 +49,7 @@ public class Menu {
      * @param delay Tempo, em milissegundos, entre cada caractere exibido.
      */
     public static void simple(String title, String options[], int delay){
-        String separator = Separator.generateSeparator(title, options, '=');
+        String separator = Divider.generateDivider(title, options, '=');
 
         // Gera o cabeçalho do menu utilizando efeito de escrita
         Write.type(separator, delay);
@@ -73,10 +73,10 @@ public class Menu {
      * @param options
      */
     public static void box(String title, String options[]){
-        String separator = Separator.generateSeparator(title, options, '-');
+        String separator = Divider.generateDivider(title, options, '-');
 
         System.out.println(separator);
-        System.out.println(Title.generateSurroundedTitle(separator, title, Separator.biggestElement(title, options)));
+        System.out.println(Title.generateSurroundedTitle(separator, title, Divider.biggestElement(title, options)));
         System.out.println(separator);
 
         writeOptions(options, separator.length());

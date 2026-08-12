@@ -34,7 +34,7 @@ The class uses:
 
 ```
 
-It also uses the `Separator` and `Title` classes from the `cpl.menu` package to generate the header structure.
+It also uses the `Divider` and `Title` classes from the `cpl.menu` package to generate the header structure.
 
 ---
 
@@ -248,7 +248,7 @@ Header.typeHeader("MAIN MENU", 50);
 
 The `Header` class acts as an abstraction layer over other cpl features.
 
-### `Separator`
+### `Divider`
 
 Responsible for automatically generating the separator:
 
@@ -307,7 +307,7 @@ Write.type("0 - Exit");
 ## ⚠️ Notes
 
 * Title centering depends on the size of the `separator`.
-* When no separator is provided, it is automatically generated using `Separator`.
+* When no separator is provided, it is automatically generated using `Divider`.
 * `typeHeader()` uses the `Write` class and therefore follows the same delay behavior.
 * The delay is specified in **milliseconds**.
 * The class only contains `static` methods, so creating a `Header` instance is not necessary.
