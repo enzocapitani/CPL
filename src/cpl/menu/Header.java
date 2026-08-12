@@ -78,4 +78,18 @@ public class Header {
         Write.type(separator);
     }
 
+    /**
+     * Writes a simplified header to the terminal; dividers are generated based on the title length,
+     * and the divider is approximately twice the length of the title.
+     *
+     * The typing effect has the delay based on the WriteClass const
+     *
+     * @param title the header title
+     */
+    public static void typeHeader(String title, String divider){
+        Write.type(divider);
+        Write.type(Title.generateCenterTitle(divider, title));
+        Write.type(divider);
+    }
+
 }
